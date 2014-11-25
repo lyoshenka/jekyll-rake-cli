@@ -18,7 +18,7 @@ Every post will be assigned an internal id. Many commands (e.g. `edit`, `tag`, e
 ## Commands
 
 ```
-ls                  # List latest posts
+ls                  # List posts (recently modified posts first)
 new                 # Create a new post with the given title and open it in the editor
 edit                # Open existing post in editor
 
@@ -30,7 +30,6 @@ retouch             # Touch last 20 posts so "rake ls" lists them in date order
 tags                # List tags
 tag                 # Add tag
 untag               # Remove tag
-
 
 preview             # Build and serve site locally
 push                # Commit to git and push
