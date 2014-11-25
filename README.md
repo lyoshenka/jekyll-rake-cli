@@ -18,18 +18,22 @@ Every post will be assigned an internal id. Many commands (e.g. `edit`, `tag`, e
 ## Commands
 
 ```
-rake default             # List all tasks
-rake edit                # Open existing post in editor
-rake fixids              # Fill in missing post ids
-rake ls                  # List latest posts
-rake new                 # Create a new post with the given title and open it in the editor
-rake preview             # Build and serve site locally
-rake push                # Commit to git and push
-rake redate              # Change the date on a post
-rake rename              # Change the title of a post
-rake retime              # Change the time on a post
-rake retouch             # Touch last 20 posts so "rake ls" lists them in date order
-rake tag                 # Add tag
-rake tags                # List tags
-rake untag               # Remove tag
+ls                  # List latest posts
+new                 # Create a new post with the given title and open it in the editor
+edit                # Open existing post in editor
+
+rename              # Change the title of a post
+redate              # Change the date on a post
+retime              # Change the time on a post
+retouch             # Touch last 20 posts so "rake ls" lists them in date order
+
+tags                # List tags
+tag                 # Add tag
+untag               # Remove tag
+
+
+preview             # Build and serve site locally
+push                # Commit to git and push
+
+fixids              # Fill in missing post ids
 ```
