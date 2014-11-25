@@ -1,4 +1,8 @@
-jekyll-mega-rake
-================
+# Jekyll CLI via Rake
 
-My Rakefile for Jekyll, which provides me with a full CLI for creating posts, editing, tagging, etc.
+A Rakefile for Jekyll which provides a full CLI for creating posts, editing, tagging, etc.
+
+# Install
+
+- Copy cli.rake into your Jekyll directory
+- Add `import "cli.rake"` to your Rakefile. If you don't have a Rakefile, create an empty one.
