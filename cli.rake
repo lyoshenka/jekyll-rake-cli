@@ -4,6 +4,15 @@ require 'colorize'
 
 
 #
+# Constants (configure these as you wish)
+#
+
+POSTS_DIR = '_posts'
+EDITOR = 'vi'
+TIMEZONE = 'America/New_York'
+
+
+#
 # Generally useful tasks
 #
 
@@ -41,13 +50,8 @@ end
 task :list => :ls
 
 
-desc 'Create a new post with the given title, then open it in vi'
-task :new => [:new_no_vi, :edit] do
-end
-
-
-desc 'Create a new post with the given title'
-task :new_no_vi do
+desc 'Create a new post with the given title and open it in the editor'
+task :new do
   args = parseArgs(filenum: false)
   title = args[:rest]
   if title.empty?
@@ -65,14 +69,14 @@ task :new_no_vi do
   end
 
   savePost(filename, {'meta' => {'title' => title, 'date' => now.strftime('%F %T')}, 'body' => ''})
-  listPosts(1)
+  exec(EDITOR + ' ' + filename)
 end
 
 
-desc 'Open post in vi'
+desc 'Open existing post in editor'
 task :edit do
   args = parseArgs(endstring: false)
-  exec('vi ' + args[:filename]);
+  exec(EDITOR + ' ' + args[:filename]);
 end
 
 desc 'Change the title of a post'
@@ -225,7 +229,7 @@ end
 
 
 def setTZ()
-  ENV["TZ"] = "America/New_York"
+  ENV["TZ"] = TIMEZONE
 end
 
 
@@ -342,7 +346,7 @@ end
 
 
 def postsDir()
-  File.expand_path(File.dirname(__FILE__)) + '/_posts'
+  File.expand_path(File.dirname(__FILE__)) + '/' + POSTS_DIR
 end
 
 
