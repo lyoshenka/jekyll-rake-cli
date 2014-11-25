@@ -4,9 +4,8 @@ A Rakefile for Jekyll which provides a full CLI for creating posts, editing, tag
 
 # Install
 
-- `gem install rake`
+- Install the required gems (`rake`, `chronic`, `colorize`) if you don't have them. Adding them to your Gemfile is a good idea.
 - Copy `cli.rake` into your Jekyll directory.
-- Add the required gems (`chronic`, `colorize`) to your Gemfile if they aren't there already.
 - Add `import "cli.rake"` to your Rakefile. If you don't have a Rakefile, create an empty one.
 - Run `rake fixids` to add ids to your posts.
 
